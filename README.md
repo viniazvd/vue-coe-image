@@ -80,7 +80,8 @@ export default {
 
 **Pay Attention**
 <p>You need to import the style file so the animations will work!</p>
-<p><i>I recommend doing this on a global level (main.js).</i></p>
+<p><i>I recommend doing this on a global level.</i></p>
+
 ```javascript
 import 'vue-coe-image/dist/vue-coe-image.css'
 ```
