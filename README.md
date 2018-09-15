@@ -56,12 +56,12 @@ export default {
 
 ## Props
 
-Name       | required | About
------      | -------  | -----
+Name       |   type   | required | About
+-----      | -------  | -------- | ------
 
 
 ## Events
 
-Name        About
+Name       | About
 -----      | -----
 
