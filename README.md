@@ -8,6 +8,27 @@
   ✨ <a href="#">Example</a>✨
 </p>
 
+**Explanation**
+https://developers.google.com/web/tools/lighthouse/audits/offscreen-images
+
+**Disclaimer**
+```
+In the past, it was very difficult and expensive to detect the visibility of a particular element.
+
+The Intersection Observer API solves this problem in a really organized, efficient and performative way. 
+It provides a workable template that we can observe to be notified when an element enters the viewport.
+```
+
+**Competitive Diferentials**
+-Inspired by: [Intersection Observer API](https://developer.mozilla.org/docs/Web/API/Intersection_Observer_API).
+-Loads image only when it enters the viewport (`check in browser network`)
+-Progressive image loading with animations
+-Performant progressive blur using SVG
+-You receive intersection events to decide whether or not to perform tasks or animation processes based on whether the user will see the result or not.
+
+**Warning**
+The IntersectionObserver API is not fully supported by all modern browsers just yet, but there’s a [polyfill](https://github.com/w3c/IntersectionObserver/tree/master/polyfill) for it maintained by the w3c.
+
 **Install**
 
 `yarn add vue-coe-image@latest`
@@ -54,11 +75,22 @@ export default {
 </script>
 ```
 
+**A Note on Performance**
+```
+Keep in mind that observing elements takes up memory and CPU, that’s why it’s important to stop observing them as soon as we don’t need to.
+
+We have a couple of methods on the IntersectionObserver instance:
+
+unobserve: Stops observing an element.
+disconnect: Stops observing all elements.
+```
+
 ## Props
 
 Name       |   type   | required | About
 -----      | -------  | -------- | ------
 
+You could listen to the intersect and load events for more complex animations and state handling:
 
 ## Events
 
