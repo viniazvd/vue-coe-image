@@ -1,7 +1,11 @@
 <h1 align="center">vue-coe-image ✅</h1>
 
 <p align="center">
-  <q>Component for progressive and lazy rendering images inspired by: [Intersection Observer API](https://developer.mozilla.org/docs/Web/API/Intersection_Observer_API)</q>
+  <q>Component for progressive and lazy rendering images inspired by:
+    <a href='https://developer.mozilla.org/docs/Web/API/Intersection_Observer_API'>
+      <b>Intersection Observer API</b>
+    </a>
+  </q>
 </p>
 
 <p align="center">
