@@ -8,6 +8,7 @@ const image = {
       type: String,
       required: true
     },
+    srcset: String,
     fallback: String,
     delay: {
       type: [String, Number],
@@ -44,8 +45,8 @@ const image = {
 
   mounted () {
     setTimeout(() => {
-      this.observer = new IntersectionObserver(entries => {
-        const image = entries[0]
+      this.observer = new IntersectionObserver(targets => {
+        const image = targets[0]
 
         if (image.isIntersecting) {
           this.intersected = true
@@ -63,7 +64,15 @@ const image = {
       const fallbackSrc = this.fallback
       const imageSource = this.hasError ? fallbackSrc : this.src
 
-      return this.intersected && imageSource
+      if (this.intersected) {
+        if (this.srcset) {
+          return this.srcset
+        } else {
+          return imageSource
+        }
+      } else {
+        return ''
+      }
     },
 
     deviation () {
