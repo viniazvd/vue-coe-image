@@ -102,12 +102,9 @@ export default {
 
 **A Note on Performance**
 
-<p style='color:green'>Keep in mind that observing elements takes up memory and CPU, that’s why it’s important to stop observing them as soon as we don’t need to.
+<p>Observe the elements occupy memory and CPU!</p>
 
-We have a couple of methods on the IntersectionObserver instance:
-
-unobserve: Stops observing an element.
-disconnect: Stops observing all elements.</p>
+p>For this reason, immediately after finding the element, we use an instance method named <b>disconnect</b> to stop observing and make the lib more performative.</p>
 
 
 <br>
