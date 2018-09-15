@@ -129,8 +129,9 @@ const image = {
     return h('div', { class: 'vue-coe-image' }, [ svg, image ])
   },
 
-  destroyed () {
-    this.observer.disconnect()
+  beforeDestroy () {
+    // defensive code
+    this.observer.unobserve()
   }
 }
 
