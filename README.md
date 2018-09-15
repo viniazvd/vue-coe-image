@@ -36,7 +36,7 @@ It provides a workable template that we can observe to be notified when an eleme
 
 **Competitive Diferentials**
 <ul style='margin: 0; padding: 0; color: red; list-style-type: none;'>
-  <li>Loads image only when it enters the viewport (`check in browser network`)</li>
+  <li>Loads image only when it enters the viewport (<i>check in browser network</i>)</li>
   <li>Progressive image loading with animations</li>
   <li>Performant progressive blur using SVG</li>
   <li>You receive intersection events to decide whether or not to perform tasks or animation processes based on whether the user will see the result or not.</li>
