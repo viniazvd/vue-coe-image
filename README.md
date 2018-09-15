@@ -145,12 +145,10 @@ blurLevel           | Number   |  `false` | Blur animation
 duration            | Number   |  `false` | Animation duration time
 
 
-You could listen to the intersect and load events for more complex animations and state handling:
-
 ## Events
 
 Name       | About
 -----      | -----
-intersect  | Triggered when the image intersects the viewport
+intersect  | Triggered when the image crosses the viewport for more complex animations and state manipulation
 error      | Triggered when an image upload error occurs
 
