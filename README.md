@@ -1,4 +1,4 @@
-<h1 align="center">vue-coe-validator ✅</h1>
+<h1 align="center">vue-coe-image ✅</h1>
 
 <p align="center">
   <q>Component for progressive and lazy rendering images</q>
