@@ -1,7 +1,7 @@
 <h1 align="center">vue-coe-image ✅</h1>
 
 <p align="center">
-  <q>Component for progressive and lazy rendering images</q>
+  <q>Component for progressive and lazy rendering images inspired by: [Intersection Observer API](https://developer.mozilla.org/docs/Web/API/Intersection_Observer_API)</q>
 </p>
 
 <p align="center">
@@ -24,7 +24,6 @@ It provides a workable template that we can observe to be notified when an eleme
 
 **Competitive Diferentials**
 <ul style='margin: 0; padding: 0; color: red; list-style-type: none;'>
-  <li>Inspired by: [Intersection Observer API](https://developer.mozilla.org/docs/Web/API/Intersection_Observer_API).</li>
   <li>Loads image only when it enters the viewport (`check in browser network`)</li>
   <li>Progressive image loading with animations</li>
   <li>Performant progressive blur using SVG</li>
