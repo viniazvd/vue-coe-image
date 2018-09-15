@@ -12,7 +12,7 @@
 https://developers.google.com/web/tools/lighthouse/audits/offscreen-images
 
 **Disclaimer**
-```
+```text
 In the past, it was very difficult and expensive to detect the visibility of a particular element.
 
 The Intersection Observer API solves this problem in a really organized, efficient and performative way. 
@@ -20,11 +20,13 @@ It provides a workable template that we can observe to be notified when an eleme
 ```
 
 **Competitive Diferentials**
--Inspired by: [Intersection Observer API](https://developer.mozilla.org/docs/Web/API/Intersection_Observer_API).
--Loads image only when it enters the viewport (`check in browser network`)
--Progressive image loading with animations
--Performant progressive blur using SVG
--You receive intersection events to decide whether or not to perform tasks or animation processes based on whether the user will see the result or not.
+<ul style='margin: 0; padding: 0; color: red; list-style-type: none;'>
+  <li>Inspired by: [Intersection Observer API](https://developer.mozilla.org/docs/Web/API/Intersection_Observer_API).</li>
+  <li>Loads image only when it enters the viewport (`check in browser network`)</li>
+  <li>Progressive image loading with animations</li>
+  <li>Performant progressive blur using SVG</li>
+  <li>You receive intersection events to decide whether or not to perform tasks or animation processes based on whether the user will see the result or not.</li>
+</ul>
 
 **Warning**
 The IntersectionObserver API is not fully supported by all modern browsers just yet, but there’s a [polyfill](https://github.com/w3c/IntersectionObserver/tree/master/polyfill) for it maintained by the w3c.
