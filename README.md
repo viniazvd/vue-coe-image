@@ -55,13 +55,34 @@ The IntersectionObserver API is not fully supported by all modern browsers just 
 `yarn add vue-coe-image@latest`
 
 
-**Include Plugin**
+**Include Plugin (to import globally)**
 ```javascript
 import Vue from 'vue'
 
+import 'vue-coe-image/dist/vue-coe-image.css'
 import { VueCoeImage } from 'vue-coe-image'
 
 Vue.use(VueCoeImage)
+```
+
+**Register in component (to import locally)**
+```vue
+<script>
+import VueCoeImage from 'vue-coe-image'
+
+export default {
+  components: { VueCoeImage }
+  ...
+</script>
+```
+
+<br>
+
+**Pay Attention**
+<p>You need to import the style file so the animations will work!</p>
+<p><i>I recommend doing this on a global level (main.js).</i></p>
+```javascript
+import 'vue-coe-image/dist/vue-coe-image.css'
 ```
 
 <br>
