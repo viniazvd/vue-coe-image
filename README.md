@@ -104,7 +104,7 @@ export default {
 
 <p>Observe the elements occupy memory and CPU!</p>
 
-p>For this reason, immediately after finding the element, we use an instance method named <b>disconnect</b> to stop observing and make the lib more performative.</p>
+<p>For this reason, immediately after finding the element, we use an instance method named <b>disconnect</b> to stop observing and make the lib more performative.</p>
 
 
 <br>
