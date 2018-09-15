@@ -45,7 +45,8 @@ It provides a workable template that we can observe to be notified when an eleme
 <br>
 
 **Warning**
-<p style='color:red;'>The IntersectionObserver API is not fully supported by all modern browsers just yet, but there’s a [polyfill](https://github.com/w3c/IntersectionObserver/tree/master/polyfill) for it maintained by the w3c.</p>
+<p>The IntersectionObserver API is not fully supported by all modern browsers just yet, but there’s a polyfill for it maintained by the w3c.</p>
+[polyfill repository](https://github.com/w3c/IntersectionObserver/tree/master/polyfill)
 
 <br>
 
