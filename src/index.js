@@ -106,8 +106,7 @@ const image = {
 
     const svg = h('svg', {
       class: ['filter-defs-svg hidden'],
-      attrs: { xmlns: 'http://www.w3.org/2000/svg', version: '1.1' }
-    }, [ defs ])
+      attrs: { xmlns: 'http://www.w3.org/2000/svg', version: '1.1' } }, [ defs ])
 
     const image = h('img', {
       attrs: { src: this.image },
