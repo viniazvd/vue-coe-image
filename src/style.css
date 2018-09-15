@@ -1,0 +1,8 @@
+.filter-defs-svg { display: none; }
+
+.lazy-load-image {
+  width: 100%;
+  filter: url("#blur");
+  transition: filter 2s;
+  will-change: filter;
+}
