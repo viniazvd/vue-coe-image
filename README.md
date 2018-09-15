@@ -111,8 +111,13 @@ export default {
 
 ## Props
 
-Name       |   type   | required | About
------      | -------  | -------- | ------
+Name                |   type   | required | About
+-----               | -------  | -------- | ------
+src                 |  String  |  `true`  | Image to load when crossing viewport
+srcset              |  String  |  `false` | Images to be used for different resolutions
+fallback            |  String  |  `false` | Also known as a 'placeholder', this prop avoids an error if it fails or delays loading the image.
+intersectionOptions |  Object  |  `false` | https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API#Creating_an_intersection_observer
+
 
 You could listen to the intersect and load events for more complex animations and state handling:
 
@@ -120,4 +125,6 @@ You could listen to the intersect and load events for more complex animations an
 
 Name       | About
 -----      | -----
+intersect  | Triggered when the image intersects the viewport
+error      | Triggered when an image upload error occurs
 
