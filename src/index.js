@@ -139,6 +139,6 @@ export default image
 
 export const VueCoeImage = {
   install (Vue, { name = 'VueCoeImage' } = {}) {
-    Vue.component(name, this)
+    Vue.component(name, image)
   }
 }
