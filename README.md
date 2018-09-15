@@ -45,7 +45,8 @@ It provides a workable template that we can observe to be notified when an eleme
 <br>
 
 **Warning**
-<p style='color:red;'>The IntersectionObserver API is not fully supported by all modern browsers just yet, but there’s a [polyfill](https://github.com/w3c/IntersectionObserver/tree/master/polyfill) for it maintained by the w3c.</p>
+<br>
+The IntersectionObserver API is not fully supported by all modern browsers just yet, but there’s a [polyfill](https://github.com/w3c/IntersectionObserver/tree/master/polyfill) for it maintained by the w3c.
 
 <br>
 
@@ -104,7 +105,7 @@ export default {
 
 <p>Observe the elements occupy memory and CPU!</p>
 
-<p>For this reason, immediately after finding the element, we use an instance method named <b>disconnect</b> to stop observing and make the lib more performative.</p>
+For this reason, immediately after finding the element, we use an instance method named [disconnect](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver/disconnect) to stop observing and make the lib more performative.
 
 
 <br>
