@@ -94,7 +94,7 @@ import 'vue-coe-image/dist/vue-coe-image.css'
   <div>
     <vue-coe-image
       :src="src"
-      fallback="https://cdn-images-1.medium.com/max/1600/1*xjGrvQSXvj72W4zD6IWzfg.jpeg"
+      fallback="https://i.ytimg.com/vi/Yt9t9e9gmmw/maxresdefault.jpg"
     />
     <button @click="changeImage">coe</button>
   </div>
