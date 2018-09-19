@@ -5,11 +5,15 @@ const image = {
 
   props: {
     src: {
-      type: String,
+      type: [String, File],
       required: true
     },
     srcset: String,
     fallback: String,
+    animation: {
+      type: Boolean,
+      default: true
+    },
     delay: {
       type: [String, Number],
       default: 0
@@ -20,7 +24,7 @@ const image = {
     },
     duration: {
       type: Number,
-      default: 1000
+      default: 1500
     },
     intersectionOptions: {
       type: Object,
@@ -43,7 +47,7 @@ const image = {
     }
   },
 
-  mounted () {
+  created () {
     setTimeout(() => {
       this.observer = new IntersectionObserver(targets => {
         const image = targets[0]
@@ -61,17 +65,10 @@ const image = {
 
   computed: {
     image () {
-      const fallbackSrc = this.fallback
-      const imageSource = this.hasError ? fallbackSrc : this.src
+      const image = this.hasError ? this.fallback : this.src
 
       if (this.intersected) {
-        if (this.srcset) {
-          return this.srcset
-        } else {
-          return imageSource
-        }
-      } else {
-        return ''
+        return (this.srcset && this.srcset) || image
       }
     },
 
@@ -118,20 +115,21 @@ const image = {
       attrs: { xmlns: 'http://www.w3.org/2000/svg', version: '1.1' } }, [ defs ])
 
     const image = h('img', {
+      style: this.style,
       attrs: { src: this.image },
       class: 'lazy-load-image',
+      ref: 'img',
       on: {
-        load: this.animate,
+        load: this.animation && this.animate,
         error: this.handleError
       }
     })
 
-    return h('div', { class: 'vue-coe-image' }, [ svg, image ])
+    return h('div', { class: 'vue-coe-image' }, [ this.animation && svg, image ])
   },
 
   beforeDestroy () {
-    // defensive code
-    this.observer.unobserve()
+    this.observer.unobserve(this.$refs.img)
   }
 }
 
