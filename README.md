@@ -94,7 +94,7 @@ import 'vue-coe-image/dist/vue-coe-image.css'
   <div>
     <vue-coe-image
       :src="src"
-      fallback="https://cdn-images-1.medium.com/max/1600/1*xjGrvQSXvj72W4zD6IWzfg.jpeg"
+      fallback="https://i.ytimg.com/vi/Yt9t9e9gmmw/maxresdefault.jpg"
     />
     <button @click="changeImage">coe</button>
   </div>
@@ -139,6 +139,7 @@ Name                |   type   | required | About
 src                 |  String  |  `true`  | Image to load when crossing viewport
 srcset              |  String  |  `false` | Images to be used for different resolutions
 fallback            |  String  |  `false` | Also known as a 'placeholder', this prop avoids an error if it fails or delays loading the image.
+animation           |  Bollean |  `false` | Animation handler (default is true) 
 intersectionOptions |  Object  |  `false` | [options by mdn](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API#Creating_an_intersection_observer)
 delay               | String   |  `false` | Delay to show image
 blurLevel           | Number   |  `false` | Blur animation
