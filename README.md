@@ -136,6 +136,7 @@ For this reason, immediately after finding the element, we use an instance metho
 
 Name                |   type   | required | About
 -----               | -------  | -------- | ------
+loaderImage         |  String  |  `false` | shows while the image is not loaded (has a default)
 src                 |  String  |  `true`  | Image to load when crossing viewport
 srcset              |  String  |  `false` | Images to be used for different resolutions
 fallback            |  String  |  `false` | Also known as a 'placeholder', this prop avoids an error if it fails or delays loading the image.
