@@ -4,12 +4,18 @@ const image = {
   name: 'vue-coe-image',
 
   props: {
+    loaderImage: {
+      type: String,
+      default: 'https://cdn-images-1.medium.com/max/1600/1*9EBHIOzhE1XfMYoKz1JcsQ.gif'
+    },
     src: {
       type: [String, File],
       required: true
     },
     srcset: String,
-    fallback: String,
+    fallback: {
+      type: String
+    },
     animation: {
       type: Boolean,
       default: true
@@ -24,7 +30,7 @@ const image = {
     },
     duration: {
       type: Number,
-      default: 1500
+      default: 500
     },
     intersectionOptions: {
       type: Object,
@@ -34,6 +40,8 @@ const image = {
 
   data () {
     return {
+      image: null,
+      imageHandler: null,
       rate: 1,
       observer: null,
       intersected: false,
@@ -42,18 +50,20 @@ const image = {
   },
 
   watch: {
-    src (x, y) {
-      if (x !== y) this.hasError = false
-    }
+    src: 'setSource',
+    hasError: 'setFallback'
   },
 
   created () {
+    this.image = this.loaderImage
+
     setTimeout(() => {
       this.observer = new IntersectionObserver(targets => {
         const image = targets[0]
 
         if (image.isIntersecting) {
           this.intersected = true
+          this.setImage()
           this.observer.disconnect()
           this.$emit('intersect')
         }
@@ -64,20 +74,45 @@ const image = {
   },
 
   computed: {
-    image () {
-      const image = this.hasError ? this.fallback : this.src
-
-      if (this.intersected) {
-        return (this.srcset && this.srcset) || image
-      }
-    },
-
     deviation () {
       return this.blurLevel * this.rate
     }
   },
 
   methods: {
+    setSource (x, y) {
+      if (x !== y) {
+        this.hasError = false
+        this.setImage()
+      }
+    },
+
+    setFallback (status) {
+      if (status) this.image = this.fallback
+    },
+
+    handleLoad () {
+      this.image = this.imageHandler.src
+      this.animation && this.animate()
+    },
+
+    handleError () {
+      if (process.env.NODE_ENV !== 'production' && !this.fallback) {
+        console.warn('an error occured during the image loading')
+      }
+
+      this.hasError = true
+      this.$emit('error')
+    },
+
+    setImage () {
+      this.imageHandler = new Image()
+      this.imageHandler.src = this.src || this.placeholder
+
+      this.imageHandler.onload = this.handleLoad
+      this.imageHandler.onerror = this.handleError
+    },
+
     animate () {
       const start = Date.now() + this.duration
 
@@ -93,15 +128,6 @@ const image = {
       }
 
       requestAnimationFrame(step)
-    },
-
-    handleError () {
-      if (process.env.NODE_ENV !== 'production' && !this.fallback) {
-        console.warn('an error occured during the image loading')
-      }
-
-      this.hasError = true
-      this.$emit('error')
     }
   },
 
@@ -115,17 +141,13 @@ const image = {
       attrs: { xmlns: 'http://www.w3.org/2000/svg', version: '1.1' } }, [ defs ])
 
     const image = h('img', {
-      style: this.style,
+      style: `url(${this.image})`,
       attrs: { src: this.image },
       class: 'lazy-load-image',
-      ref: 'img',
-      on: {
-        load: this.animation && this.animate,
-        error: this.handleError
-      }
+      ref: 'img'
     })
 
-    return h('div', { class: 'vue-coe-image' }, [ this.animation && svg, image ])
+    return h('div', { class: 'vue-coe-image' }, [ !this.hasError && this.intersected && svg, image ])
   },
 
   beforeDestroy () {
