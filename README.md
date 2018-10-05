@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/VitorLuizC/vue-data-tablee"><img src="https://img.shields.io/npm/l/vuelidation.svg" alt="License" target="_blank"></a>
+  <a href="#"><img src="https://img.shields.io/npm/l/vuelidation.svg" alt="License" target="_blank"></a>
 </p>
 
 <br>
