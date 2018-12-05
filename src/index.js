@@ -71,6 +71,8 @@ const image = {
 
       this.observer.observe(this.$el)
     }, this.delay)
+
+    this.$once('hook:beforeDestroy', this.observer.unobserve(this.$refs.img))
   },
 
   computed: {
@@ -148,10 +150,6 @@ const image = {
     })
 
     return h('div', { class: 'vue-coe-image' }, [ !this.hasError && this.intersected && svg, image ])
-  },
-
-  beforeDestroy () {
-    this.observer.unobserve(this.$refs.img)
   }
 }
 
