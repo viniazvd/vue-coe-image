@@ -150,13 +150,11 @@ const image = {
     })
 
     return h('div', { class: 'vue-coe-image' }, [ !this.hasError && this.intersected && svg, image ])
-  }
-}
+  },
 
-export default image
-
-export const VueCoeImage = {
   install (Vue) {
     Vue.component('VueCoeImage', image)
   }
 }
+
+export default image
