@@ -52,7 +52,7 @@ The IntersectionObserver API is not fully supported by all modern browsers just 
 
 **Install**
 
-`yarn add vue-coe-image@latest`
+`yarn add vue-coe-image`
 
 
 **Include Plugin (to import globally)**
