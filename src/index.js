@@ -73,9 +73,8 @@ const image = {
       }, this.intersectionOptions)
 
       this.observer.observe(this.$el)
+      this.$once('hook:beforeDestroy', this.observer.unobserve(this.$refs.img))
     }, this.delay)
-
-    this.$once('hook:beforeDestroy', this.observer.unobserve(this.$refs.img))
   },
 
   computed: {
