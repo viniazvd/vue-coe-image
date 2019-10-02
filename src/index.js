@@ -40,12 +40,15 @@ const image = {
 
   data () {
     return {
+      rate: 1,
+
+      observer: {},
+
       image: null,
       imageHandler: null,
-      rate: 1,
-      observer: null,
-      intersected: false,
-      hasError: false
+
+      hasError: false,
+      intersected: false
     }
   },
 
