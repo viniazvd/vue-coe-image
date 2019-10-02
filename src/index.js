@@ -60,21 +60,28 @@ const image = {
   created () {
     this.image = this.loaderImage
 
-    setTimeout(() => {
-      this.observer = new IntersectionObserver(targets => {
-        const image = targets[0]
+    this.$once('hook:mounted', () => {
+      setTimeout(() => {
+        this.observer = new IntersectionObserver(targets => {
+          const image = targets[0]
 
-        if (image.isIntersecting) {
-          this.intersected = true
-          this.setImage()
-          this.observer.disconnect()
-          this.$emit('intersect')
-        }
-      }, this.intersectionOptions)
+          if (image.isIntersecting) {
+            this.intersected = true
+            this.setImage()
+            this.observer.disconnect()
+            this.$emit('intersect')
+          }
+        }, this.intersectionOptions)
 
-      this.observer.observe(this.$el)
-      this.$once('hook:beforeDestroy', this.observer.unobserve(this.$refs.img))
-    }, this.delay)
+        this.observer.observe(this.$el)
+      }, this.delay)
+    })
+
+    this.$once('hook:beforeDestroy', () => {
+      setTimeout(() => {
+        this.observer.unobserve(this.$el)
+      }, this.delay)
+    })
   },
 
   computed: {
