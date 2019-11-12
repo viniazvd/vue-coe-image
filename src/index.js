@@ -152,10 +152,10 @@ const image = {
       attrs: { xmlns: 'http://www.w3.org/2000/svg', version: '1.1' } }, [ defs ])
 
     const image = h('img', {
-      style: `url(${this.image})`,
-      attrs: { src: this.image },
+      ref: 'img',
       class: 'lazy-load-image',
-      ref: 'img'
+      style: `url(${this.image})`,
+      attrs: { src: this.image, crossorigin: 'anonymous' }
     })
 
     return h('div', { class: 'vue-coe-image' }, [ !this.hasError && this.intersected && svg, image ])
