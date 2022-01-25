@@ -155,7 +155,7 @@ const image = {
       ref: 'img',
       class: 'lazy-load-image',
       style: `url(${this.image})`,
-      attrs: { src: this.image, crossorigin: 'anonymous' }
+      attrs: { src: this.image }
     })
 
     return h('div', { class: 'vue-coe-image' }, [ !this.hasError && this.intersected && svg, image ])
