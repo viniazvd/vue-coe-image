@@ -15,7 +15,9 @@
     "observer"
   ],
   "main": "dist/vue-coe-image.js",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "author": {
     "name": "Vinicius Azevedo",
     "email": "viniazvd@gmail.com"
@@ -26,11 +28,16 @@
   },
   "license": "MIT",
   "scripts": {
+    "dev": "vite",
+    "doc": "vite build",
     "build": "bili src/index.js --formats cjs,es,umd --banner --js buble --moduleName VueCoeImage"
   },
   "devDependencies": {
     "bili": "^3.1.2",
     "rollup-plugin-vue": "^4.3.2",
+    "vite": "^2.5.7",
+    "vite-plugin-vue2": "^1.8.2",
+    "vue": "^2.5.17",
     "vue-template-compiler": "^2.5.17"
   }
 }
