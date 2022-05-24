@@ -2,7 +2,10 @@
 
 .lazy-load-image {
   width: 100%;
+
   filter: url("#blur");
+  @-moz-document url-prefix() { filter: unset; }
+
   transition: filter 2s;
   will-change: filter;
 }
